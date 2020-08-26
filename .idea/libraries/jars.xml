@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jars">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jars/pacdasher_resources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/pacdasher.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/pacdasher14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

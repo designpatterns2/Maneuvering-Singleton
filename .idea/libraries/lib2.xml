@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jars/lib/xml-apis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/lib/bcel-5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/lib/jdom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/lib/xercesImpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/lib/jace.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/lib/jaxp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/lib/retroweaver.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/lib/sax.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/lib/Regex.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
