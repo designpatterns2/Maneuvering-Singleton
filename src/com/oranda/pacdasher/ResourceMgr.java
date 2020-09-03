@@ -135,10 +135,11 @@ public class ResourceMgr
     
     private Image addImageResource(String filename) 
     {
-        String path = imagesDir + filename;
+        String path = filename;
         Image img = null;
         try
         {
+            //img = getClass().getClassLoader().get
             img = r.loadImageFromJar(path);
         }
         catch (IOException ioe)
@@ -159,7 +160,7 @@ public class ResourceMgr
         if (!isSoundActive) { return null; }
         Clip clip = null;
         AudioInputStream soundStream = null;
-        String path = soundDir + filename;
+        String path = filename;
         try
         {
             //File f = new File(path);

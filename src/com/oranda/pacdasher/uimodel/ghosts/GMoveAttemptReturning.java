@@ -17,7 +17,7 @@ import com.oranda.pacdasher.uimodel.util.*;
 
 import java.util.Random;
 
-class GMoveAttemptReturning extends MoveAttempt
+public class GMoveAttemptReturning extends MoveAttempt
 {
     protected static Random randomGenerator = new Random();
     

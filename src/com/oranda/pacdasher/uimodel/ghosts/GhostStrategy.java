@@ -13,6 +13,7 @@
 package com.oranda.pacdasher.uimodel.ghosts;
 
 import com.oranda.pacdasher.uimodel.*;
+import com.oranda.pacdasher.uimodel.ghosts.states.*;
 import com.oranda.pacdasher.uimodel.util.*;
 import com.oranda.pacdasher.uimodel.util.UIModelConsts.GhostState;
 
@@ -28,6 +29,7 @@ public class GhostStrategy
     protected Random randomGenerator;
     protected int virtualTimeBeganReturning;
     private GhostState ghostState;
+    private MoveState moveState;
     
     static
     {
@@ -42,87 +44,18 @@ public class GhostStrategy
     {
         this.ghost = ghost;        
         this.randomGenerator = new Random();
-        ghostState = GhostState.NORMAL_GHOST_STATE;
+        moveState = new NormalState();
     }
 
     public void move(PosAndDirection posAndDirection,
         XY pacDasherXy, DirectionCode pacDasherDirectionCode)
     {  
-        if (ghostState == GhostState.FLIGHT_GHOST_STATE)
-        {            
-             /*
-              // if flight time is up, restore to normal
-             if (getVirtualTimeSinceFlight() > Ghost.TIME_FLIGHT_TOTAL)
-             {
-                 setStateNormalDueToTimeout();
-             }
-             // halve speed in flight state
-             else 
-             */
-             // halve the speed of fleeing ghosts
-             if (UIModel.getVirtualTime()%2 == 1)
-             {
-                 return; // i.e. don't move
-             }
-        }
-        
-        if (ghostState == GhostState.RETURNING_GHOST_STATE)
-        {
-             // if flight time is up, restore to normal
-             if (getVirtualTimeSinceReturning() > Ghost.TIME_RETURNING)
-             {
-                 Const.logger.fine("setting back to normal, "
-                        + "virtualTimeSinceReturning is " 
-                        + getVirtualTimeSinceReturning());
-                 setGhostState(GhostState.NORMAL_GHOST_STATE);
-             }
-             else
-             {
-                 return; // i.e. don't move
-             }
-        } 
-        
-        // slow down ghosts at the side exits to be faithful
-        if (ghostState == GhostState.NORMAL_GHOST_STATE 
-                || ghostState == GhostState.SCATTER_GHOST_STATE) 
-        {
-            if (UIModel.getVirtualTime()%2 == 1)
-            {
-                int xc = posAndDirection.nearestXCoarse();
-                // Const.logger.fine("ghost " + ghost.getClass().getName() 
-                //         + " xc: " + xc);
-                int leftXCBoundary = 0;
-                int rightXCBoundary = UIModelConsts.MAZE_WIDTH;
-                if (xc < leftXCBoundary + 2 || xc > rightXCBoundary - 4) 
-                {                    
-                    return; // i.e. don't move  
-                }
-            }
-        }
-        
-        // better to do this polymorphically using the State pattern    
-        MoveAttempt moveAttempt;
-        if (ghostState == GhostState.NORMAL_GHOST_STATE)
-        {
-            moveAttempt = GMoveAttemptNormal.getInstance();
-        }
-        else if (ghostState == GhostState.SCATTER_GHOST_STATE)
-        {
-            moveAttempt = GMoveAttemptScatter.getInstance();
-        }
-        else if (ghostState == GhostState.RETURNING_GHOST_STATE)
-        {
-            moveAttempt = GMoveAttemptReturning.getInstance();
-        }
-        else //if (ghostState == GhostState.FLIGHT_GHOST_STATE)
-        {
-            moveAttempt = GMoveAttemptFlight.getInstance();
-        }
-        
+        MoveAttempt moveAttempt = moveState.move(this, posAndDirection);
+
+        if(moveAttempt == null) return;
+
         tryMove(posAndDirection, pacDasherXy, 
             pacDasherDirectionCode, moveAttempt);
-
-        //Const.logger.fine("GhostStrategy: after move " + posAndDirection.getXY());
     }
 
     public void tryMove(PosAndDirection posAndDirection,
@@ -190,7 +123,7 @@ public class GhostStrategy
         return virtualTimeBeganReturning;
     }
     
-    protected int getVirtualTimeSinceReturning()
+    public int getVirtualTimeSinceReturning()
     {
         return UIModel.getVirtualTime() 
             - getVirtualTimeBeganReturning();
@@ -208,12 +141,16 @@ public class GhostStrategy
     
     public void setGhostState(GhostState ghostState)
     {
-        //Const.logger.fine("ghostState: " + ghostState);
         this.ghostState = ghostState;
-        
-        if (ghostState == GhostState.RETURNING_GHOST_STATE)
-        {
+        if (ghostState == GhostState.RETURNING_GHOST_STATE) {
+            moveState = new ReturningState();
             markVirtualTimeBeganReturning();
+        } else if (ghostState == GhostState.NORMAL_GHOST_STATE) {
+            moveState = new NormalState();
+        } else if (ghostState == GhostState.SCATTER_GHOST_STATE) {
+            moveState = new ScatterState();
+        } else {
+            moveState = new FlightState();
         }
     }
 }

@@ -18,8 +18,10 @@ public class ResourceUtils
     public Image loadImageFromJar(String path) throws IOException
     {
         ClassLoader cl = Thread.currentThread().getContextClassLoader();
-        //System.out.println("path is " + path + " classLoader is " + cl);
+        System.out.println("path is " + path + " classLoader is " + cl);
+        System.out.println(cl.getResource("fKiwi.gif"));
         URL url = cl.getResource(path);
+        System.out.println(url);
         Image i = (BufferedImage) ImageIO.read(url);
         return i;
     }

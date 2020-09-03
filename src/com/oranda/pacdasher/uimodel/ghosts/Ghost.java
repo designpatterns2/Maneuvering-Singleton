@@ -32,7 +32,7 @@ public class Ghost extends MobileVisualObject
     protected static final int TIME_FLIGHT_TOTAL = 450;
     protected static final int TIME_SCATTER = 300;
     protected static final int PERIOD_SCATTER = 1500;    
-    protected static final int TIME_RETURNING = 250;
+    public static final int TIME_RETURNING = 250;
 
     protected XYCoarse xyCoarse;
     protected XY pacDasherXy;

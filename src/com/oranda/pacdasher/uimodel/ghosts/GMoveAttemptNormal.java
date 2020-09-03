@@ -24,7 +24,7 @@ import java.util.Random;
      * (2. If distances equal, use priority order UP, LEFT, DOWN, RIGHT)
      */    
       
-class GMoveAttemptNormal extends MoveAttempt
+public class GMoveAttemptNormal extends MoveAttempt
 {
     protected static Random randomGenerator = new Random();
         
