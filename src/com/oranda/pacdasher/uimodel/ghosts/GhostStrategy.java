@@ -44,7 +44,7 @@ public class GhostStrategy
     {
         this.ghost = ghost;        
         this.randomGenerator = new Random();
-        moveState = new NormalState();
+        moveState = new ScatterState();
     }
 
     public void move(PosAndDirection posAndDirection,
@@ -145,12 +145,10 @@ public class GhostStrategy
         if (ghostState == GhostState.RETURNING_GHOST_STATE) {
             moveState = new ReturningState();
             markVirtualTimeBeganReturning();
-        } else if (ghostState == GhostState.NORMAL_GHOST_STATE) {
-            moveState = new NormalState();
-        } else if (ghostState == GhostState.SCATTER_GHOST_STATE) {
-            moveState = new ScatterState();
-        } else {
+        } else if (ghostState == GhostState.FLIGHT_GHOST_STATE) {
             moveState = new FlightState();
+        } else {
+            moveState = new ScatterState();
         }
     }
 }

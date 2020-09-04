@@ -4,7 +4,6 @@
     <list default="true" id="87f81854-e743-4240-94e9-6c7da2e57f31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Maneuvering - State.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Maneuvering - State.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcManeuvering-State/com/oranda/pacdasher/uimodel/ghosts/GhostStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/srcManeuvering-State/com/oranda/pacdasher/uimodel/ghosts/GhostStrategy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +48,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.PacDasherMain" />
@@ -66,6 +78,8 @@
       <workItem from="1598460866630" duration="3679000" />
       <workItem from="1598504796610" duration="1039000" />
       <workItem from="1598526880982" duration="484000" />
+      <workItem from="1599206279746" duration="469000" />
+      <workItem from="1599207152165" duration="2684000" />
     </task>
     <servers />
   </component>
@@ -77,29 +91,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="246" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598462499709" />
-    <state width="1921" height="289" key="GridCell.Tab.0.bottom" timestamp="1598464584574">
+    <state width="1921" height="289" key="GridCell.Tab.0.bottom" timestamp="1599217903746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598464584574" />
-    <state width="1921" height="289" key="GridCell.Tab.0.center" timestamp="1598464584574">
+    <state width="1921" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599217903746" />
+    <state width="1921" height="289" key="GridCell.Tab.0.center" timestamp="1599217903745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598464584574" />
-    <state width="1921" height="289" key="GridCell.Tab.0.left" timestamp="1598464584574">
+    <state width="1921" height="289" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599217903745" />
+    <state width="1921" height="289" key="GridCell.Tab.0.left" timestamp="1599217903745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598464584574" />
-    <state width="1921" height="289" key="GridCell.Tab.0.right" timestamp="1598464584574">
+    <state width="1921" height="289" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599217903745" />
+    <state width="1921" height="289" key="GridCell.Tab.0.right" timestamp="1599217903745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="289" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598464584574" />
+    <state width="1921" height="289" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599217903745" />
     <state x="540" y="263" key="IDE.errors.dialog" timestamp="1598463378806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598463378806" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1598460995818">
+    <state x="440" y="94" key="SettingsEditor" timestamp="1599206296082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598460995818" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599206296082" />
   </component>
 </project>
